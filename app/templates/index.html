@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Scraper</title>
+</head>
+<body>
+    <h1>Wikipedia Scraper</h1>
+    <input type="text" id="urlInput" placeholder="Enter Wikipedia URL">
+    <button onclick="scrape()">Scrape</button>
+    <div id="results"></div>
+    <script>
+        function scrape() {
+            const url = document.getElementById('urlInput').value;
+            fetch('/scrape', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'url': url })
+            })
+            .then(response => response.json())
+            .then(data => {
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+</html>
