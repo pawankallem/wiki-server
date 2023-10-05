@@ -45,7 +45,7 @@ def scrape_wikipedia(search_term):
             print("hello",paragraph.getText())
         
         return jsonify(
-            "hi"
+            []
         )
     except Exception as e:
         return jsonify({'error': str(e)}), 500
