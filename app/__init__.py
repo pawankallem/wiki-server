@@ -15,10 +15,7 @@ elif PY_ENV == "prod":
     MY_URL = PROD_URL
 
 app = Flask(__name__)
-CORS(app, resources={
-    r"/scrape/*": {"origins": MY_URL},
-    r"/suggestion/*": {"origins": MY_URL}
-})
+CORS(app)
 
 from app import routes
 
